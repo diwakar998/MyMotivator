@@ -3,13 +3,14 @@ import OpenAI
 import requests
 import datetime
 import os
+import streamlit as st
 #from dotenv import load_dotenv
-load_dotenv()
+#load_dotenv()
 #import os
-
+api_key=st.secrets["OPENAI_API_KEY"]
 #print("the api key is ", os.getenv("OPENAI_API_KEY"))
 #client = OpenAI(api_key="KngEsfDmjmHorBGnxKLr2mieuELUjRoFdli7ajyBftpFj5PibIkfvcVLukEbtgDt4-2gxVnumT3BlbkFJp4Ospqv2VR1gat8LaUSsXz0j4QaCy-vk_96_br2PvuArMbK4IMcCfEh23li1yftbKvgA6sLsUA")
-client = OpenAI()
+client = OpenAI(api_key)
 '''
 def get_weather(city):
     url=f"https://wttr.in/{city}?format=%C+%t"

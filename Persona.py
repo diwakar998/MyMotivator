@@ -1,5 +1,5 @@
 #import dotenv
-import OpenAI
+import openai
 import requests
 import datetime
 #import os

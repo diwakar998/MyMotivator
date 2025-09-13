@@ -11,24 +11,7 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]  #api_key=st.secrets["OPENAI_API_K
 #print("the api key is ", os.getenv("OPENAI_API_KEY"))
 #client = OpenAI(api_key="KngEsfDmjmHorBGnxKLr2mieuELUjRoFdli7ajyBftpFj5PibIkfvcVLukEbtgDt4-2gxVnumT3BlbkFJp4Ospqv2VR1gat8LaUSsXz0j4QaCy-vk_96_br2PvuArMbK4IMcCfEh23li1yftbKvgA6sLsUA")
 #client = openai(api_key)
-'''
-def get_weather(city):
-    url=f"https://wttr.in/{city}?format=%C+%t"
-    headers = {
-        "User-Agent": "Mozilla/5.0"}
-    try:
-        response = requests.get(url, header=headers)
-        if response.status_code == 200:
-            return response.text.strip()
-        else:
-            return "Could not retrieve weather data."
-    except requests.RequestException as e:
-        return f"An error occurred: {e}"
-    
-avaiable_tools = {
-    "get_weather": get_weather
-}
-'''
+
 # Set the app title
 st.title("🤖🤖 Your Motivation Expert")
 st.title("Welcome to the AI Assistant 🎉")
@@ -63,7 +46,9 @@ messages = [
     {"role":"system", "content": SYSTEM_PROMPT}
 ]
 while True:
-    query = input(">Enter your query: ")
+    # User input
+    query = st.chat_input("How can I help you today...")
+    #query = input(">Enter your query: ")
     if query.lower() in ["exit", "quit", "bye","end"]:
         print("Goodbye!")
         break

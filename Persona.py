@@ -27,7 +27,6 @@ choice = st.radio(
 )
 
 st.write(f"You selected: **{choice}** 🚀")
-
 #choice = int(input("Enter your choice: "))
 
 if choice == "Motivational Speaker (Akshay Kumar)":
@@ -45,21 +44,21 @@ elif choice == "Yoga Instructor (Baba Ramdev)":
 messages = [
     {"role":"system", "content": SYSTEM_PROMPT}
 ]
-query=""
-while True:
+#query=""
+#while True:
     # User input
     # query = st.chat_input("How can I help you today...")
-    query = st.text_input("Type your message:", value="")
-    #query = input(">Enter your query: ")
-    if query and query.lower() in ["exit", "quit", "bye","end"]:
-        print("Goodbye!")
-        break
-    messages.append({"role":"user", "content": query})
-    response = openai.chat.completions.create(
-        model="gpt-3.5-turbo",
-        messages=messages
-    )
+ query = st.text_input("Type your message:", value="")
+ #query = input(">Enter your query: ")
+ if query and query.lower() in ["exit", "quit", "bye","end"]:
+    print("Goodbye!")
+    break
+ messages.append({"role":"user", "content": query})
+ response = openai.chat.completions.create(
+     model="gpt-3.5-turbo",
+     messages=messages
+ )
     #print(response.choices[0].message.content)
-    st.markdown(response.choices[0].message.content)
+ st.markdown(response.choices[0].message.content)
 
     #print(response.output_text)

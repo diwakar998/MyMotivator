@@ -51,8 +51,8 @@ messages = [
 query = st.text_input("Type your message:", value="")
 #query = input(">Enter your query: ")
 if query and query.lower() in ["exit", "quit", "bye","end"]:
-    print("Goodbye!")
-    break
+    st.markdown("Goodbye!")
+    #break
 messages.append({"role":"user", "content": query})
 response = openai.chat.completions.create(
      model="gpt-3.5-turbo",

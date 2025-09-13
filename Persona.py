@@ -1,10 +1,11 @@
-from dotenv import load_dotenv
-from openai import OpenAI
+import dotenv
+import OpenAI
 import requests
-from datetime import datetime
-from dotenv import load_dotenv
-load_dotenv()
+import datetime
 import os
+#from dotenv import load_dotenv
+load_dotenv()
+#import os
 
 #print("the api key is ", os.getenv("OPENAI_API_KEY"))
 #client = OpenAI(api_key="KngEsfDmjmHorBGnxKLr2mieuELUjRoFdli7ajyBftpFj5PibIkfvcVLukEbtgDt4-2gxVnumT3BlbkFJp4Ospqv2VR1gat8LaUSsXz0j4QaCy-vk_96_br2PvuArMbK4IMcCfEh23li1yftbKvgA6sLsUA")

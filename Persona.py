@@ -48,17 +48,16 @@ messages = [
 #while True:
     # User input
     # query = st.chat_input("How can I help you today...")
- query = st.text_input("Type your message:", value="")
- #query = input(">Enter your query: ")
- if query and query.lower() in ["exit", "quit", "bye","end"]:
+query = st.text_input("Type your message:", value="")
+#query = input(">Enter your query: ")
+if query and query.lower() in ["exit", "quit", "bye","end"]:
     print("Goodbye!")
     break
- messages.append({"role":"user", "content": query})
- response = openai.chat.completions.create(
+messages.append({"role":"user", "content": query})
+response = openai.chat.completions.create(
      model="gpt-3.5-turbo",
      messages=messages
- )
+)
     #print(response.choices[0].message.content)
- st.markdown(response.choices[0].message.content)
-
-    #print(response.output_text)
+st.markdown(response.choices[0].message.content)
+#print(response.output_text)

@@ -45,6 +45,7 @@ elif choice == "Yoga Instructor (Baba Ramdev)":
 messages = [
     {"role":"system", "content": SYSTEM_PROMPT}
 ]
+query=""
 while True:
     # User input
     query = st.chat_input("How can I help you today...")

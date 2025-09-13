@@ -1,8 +1,8 @@
-import dotenv
+#import dotenv
 import OpenAI
 import requests
 import datetime
-import os
+#import os
 import streamlit as st
 #from dotenv import load_dotenv
 #load_dotenv()

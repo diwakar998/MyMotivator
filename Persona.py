@@ -29,12 +29,23 @@ avaiable_tools = {
     "get_weather": get_weather
 }
 '''
-print("Welcome to the AI assistant. Select your choice:")
-print("1. Moticationa Speaker (Akshay Kumar)")
-print("2. Strict Teacher (Gabbar Singh)")
-print("3. Yoga Instructor (Baba Ramdev)")
+# Set the app title
+st.title("🤖🤖 Your Motivation Expert")
+st.title("Welcome to the AI Assistant 🎉")
+st.write("Select your choice:")
 
-choice = int(input("Enter your choice: "))
+choice = st.radio(
+    "Pick your vibe:",
+    [
+        "Motivational Speaker (Akshay Kumar)",
+        "Strict Teacher (Gabbar Singh)",
+        "Yoga Instructor (Baba Ramdev)"
+    ]
+)
+
+st.write(f"You selected: **{choice}** 🚀")
+
+#choice = int(input("Enter your choice: "))
 
 if choice == 1:
     SYSTEM_PROMPT = """You are a helpful Motivational speaker AI assistant who is specialized in boosting user's confidence by resolving the user query in positive manner.
@@ -61,5 +72,7 @@ while True:
         model="gpt-3.5-turbo",
         messages=messages
     )
-    print(response.choices[0].message.content)
+    #print(response.choices[0].message.content)
+    st.markdown(response.choices[0].message.content)
+
     #print(response.output_text)

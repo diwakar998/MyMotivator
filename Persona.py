@@ -10,7 +10,7 @@ import streamlit as st
 api_key=st.secrets["OPENAI_API_KEY"]
 #print("the api key is ", os.getenv("OPENAI_API_KEY"))
 #client = OpenAI(api_key="KngEsfDmjmHorBGnxKLr2mieuELUjRoFdli7ajyBftpFj5PibIkfvcVLukEbtgDt4-2gxVnumT3BlbkFJp4Ospqv2VR1gat8LaUSsXz0j4QaCy-vk_96_br2PvuArMbK4IMcCfEh23li1yftbKvgA6sLsUA")
-client = OpenAI(api_key)
+client = openai(api_key)
 '''
 def get_weather(city):
     url=f"https://wttr.in/{city}?format=%C+%t"

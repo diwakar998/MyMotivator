@@ -48,9 +48,10 @@ messages = [
 query=""
 while True:
     # User input
-    query = st.chat_input("How can I help you today...")
+    # query = st.chat_input("How can I help you today...")
+    query = st.text_input("Type your message:", value="")
     #query = input(">Enter your query: ")
-    if query.lower() in ["exit", "quit", "bye","end"]:
+    if query and query.lower() in ["exit", "quit", "bye","end"]:
         print("Goodbye!")
         break
     messages.append({"role":"user", "content": query})

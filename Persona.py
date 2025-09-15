@@ -33,14 +33,16 @@ st.write(f"You selected: **{choice}** 🚀")
 
 if choice == "Motivational Speaker (Akshay Kumar)":
     SYSTEM_PROMPT = """You are a helpful Motivational speaker AI assistant who is specialized in boosting user's confidence by resolving the user query in positive manner.
-    You give response in bollywood actor Akshay Kumar's style. A light weight comedy style is must."""
+    You give response in bollywood actor Akshay Kumar's style. A light weight comedy style is must. Always be witty, punchy, comedy and in light mood. 
+    Make the other person forget their issue"""
 elif choice == "Strict Teacher (Gabbar Singh)":
     SYSTEM_PROMPT = """You are a strict teacher AI assistant who is specialized in resolving user query in a very strict and disciplined manner.
-    You give response in Bollywood actor Gabbar Singh's style. Add "Are o Samba" style in your reply. You don't tolerate any nonsense. Give reply in two - three punchy lines. """
+    You give response in Bollywood actor Gabbar Singh's style. Gabbas singh is famouse character in sholay movie. 
+    Add "Are o Samba" style in your reply. You don't tolerate any nonsense. Give reply in max 5 - 6 punchy lines to motivate and forget his/her pains. """
 elif choice == "Yoga Instructor (Baba Ramdev)":
     SYSTEM_PROMPT = """You are a Yoga instructor AI assistant who is specialized in resolving user query in a very calm and peaceful manner.
     You give response in Indian yoga guru Baba Ramdev's style. You always promote yoga and healthy lifestyle.
-    Always reply in Hindi language. 
+    Always reply in Hindi language. Give some ayurvedic tips, pranayam tips and spiritual advice to solve problems and motivate.
     Add "Yoga se hoga" at the end of each response."""
 
 messages = [

@@ -1,4 +1,4 @@
-#import dotenv
+import groq
 import openai
 import requests
 import datetime
@@ -11,7 +11,9 @@ openai.api_key = st.secrets["OPENAI_API_KEY"]  #api_key=st.secrets["OPENAI_API_K
 #print("the api key is ", os.getenv("OPENAI_API_KEY"))
 #client = OpenAI(api_key="KngEsfDmjmHorBGnxKLr2mieuELUjRoFdli7ajyBftpFj5PibIkfvcVLukEbtgDt4-2gxVnumT3BlbkFJp4Ospqv2VR1gat8LaUSsXz0j4QaCy-vk_96_br2PvuArMbK4IMcCfEh23li1yftbKvgA6sLsUA")
 #client = openai(api_key)
-
+client = Groq(
+        api_key=st.secrets["GROQ_API_KEY"],
+)
 # Set the app title
 st.title("🤖🤖 Your Motivation Expert")
 st.title("Welcome to the AI Assistant 🎉")
@@ -54,10 +56,14 @@ if query and query.lower() in ["exit", "quit", "bye","end"]:
     st.markdown("Goodbye!")
     #break
 messages.append({"role":"user", "content": query})
-response = openai.chat.completions.create(
-     model="gpt-3.5-turbo",
-     messages=messages
-)
+#response = openai.chat.completions.create(
+#     model="gpt-3.5-turbo",
+#     messages=messages
+#)
+response = client.chat.completions.create(
+        messages=messages,
+        model="llama-3.3-70b-versatile"
+     )
     #print(response.choices[0].message.content)
 st.markdown(response.choices[0].message.content)
 #print(response.output_text)

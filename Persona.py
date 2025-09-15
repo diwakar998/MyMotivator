@@ -1,4 +1,4 @@
-import groq
+from groq import Groq
 import openai
 import requests
 import datetime
